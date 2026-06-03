@@ -1,39 +1,74 @@
 # EDGE MINDS HACKATHON 2026
 
-#### Team Name : Electro_Neurons
+#### Team : Electro_Neurons (ID : EDGM26-DWDPMR)
 
-#### Team ID : EDGM26-DWDPMR
+**Project Title** :
+Autonomous Local Research Agent Using LLaMA 3.2 (1B)
 
-#### Team Lead : Aditya Tiwari
+**Introduction**
 
-#### Team Members : Shubhankar, Anshuman Shukla, Dheeraj Yadav
+Research tasks often require more than a single prompt. A useful research system must break a topic into smaller questions, search for relevant information, filter useful evidence, summarize findings, and compile them into a structured final report.
 
-## Problem Statement :
+This project implements an autonomous local research agent powered by the LLaMA 3.2 (1B parameter) Small Language Model, deployed on the NVIDIA Jetson Orin Nano. The model acts as the central reasoning engine, planning sub-questions, searching local text files, generating evidence-backed summaries, and producing a final report without intermediate user guidance.
 
-Build an AI agent where the SLM is the brain - planning steps, calling tools, evaluating
-results, and self-correcting. Minimum 3 custom tools and multi-step execution. Apply to
-research assistants, data analysis, DevOps monitoring, or personal productivity
+This approach ensures low-latency offline operation, improved auditability, and strong privacy, making it suitable for environments where external APIs cannot be used.
 
-## Solution / Project Proposal :
+**Objectives**
 
-**Abstract & Problem**
+    Design a lightweight AI research assistant using LLaMA 3.2 (1B) as the core reasoning model.
 
-Edge devices need low‑latency, offline monitoring, but current solutions are either fragile rule‑based scripts or cloud‑dependent agents with latency and privacy issues. We build a fully on‑device agent that runs within a 1.2B‑parameter budget using a lightweight SLM like Llama‑3.2‑1B via Ollama.
+    Enable the system to autonomously generate sub-questions and decide execution flow (agentic behavior).
 
-**Solution Overview**
+    Implement local document search over a folder of text files without internet dependency.
 
-Brain: Local ≈1B SLM (Llama‑3.2‑1B) running through Ollama, optimized for edge hardware (4–8 GB RAM).
+    Extract and summarize relevant evidence for each sub-question.
 
-Agent Loop: Minimal Python ReAct loop (reason → tool call → observation → next step) with simple regex parsing, no heavy frameworks.
+    Compile structured, coherent final reports from intermediate summaries.
 
-Custom Tools (local, easy to implement):
+    Optimize the system for efficient deployment on Jetson Orin Nano.
 
-get_system_status() – CPU, RAM, disk, thermals via shell commands.
+**Methodology**
 
-scan_local_directory(path) – detect missing configs, large files, log bloat.
+    The system follows a multi-stage agentic pipeline driven by LLaMA 3.2 (1B):
 
-save_edge_log(payload) – append structured diagnostics to a local log file.
+    User Input
+    The user provides a research topic.
 
-**Self‑Correction**
+    Planning (SLM - LLaMA 3.2)
+    The model generates 3–6 sub-questions and determines the order of execution.
 
-If a tool call fails, the Python layer captures the error and feeds it back to the SLM as an Observation. The model then adjusts its plan (e.g., fixes arguments, tries fallback paths) and issues a corrected tool call. This creates an offline, self‑healing edge agent that is simple to implement yet showcases real multi‑step, tool‑using, and self‑correcting behavior within a strict 1.2B parameter budget.
+    Local Retrieval Tool
+    A file search module scans local text documents, extracts relevant snippets, and returns file references.
+
+    Reasoning + Summarization (SLM)
+    LLaMA 3.2 processes retrieved content to generate concise, evidence-based answers for each sub-question.
+
+    Iterative Agent Loop
+    The model evaluates coverage and decides whether additional sub-questions are needed.
+
+    Report Compilation
+    All summaries are merged into a structured final research report.
+
+    The architecture is optimized for edge deployment, ensuring low memory footprint and efficient inference using the 1B parameter model.
+
+**Scope**
+
+    Offline academic research assistant
+
+    Local knowledge base querying system
+
+    Privacy-sensitive environments (defense, healthcare, enterprise)
+
+    Edge AI deployment on Jetson devices
+
+**Future improvements may include:**
+
+    Document chunking and embedding-based retrieval
+
+    Vector search integration
+
+    Confidence scoring for retrieved evidence
+
+    Persistent memory and improved agent state tracking
+
+    Fine-tuning or prompt optimization specific to LLaMA 3.2 (1B)

@@ -24,7 +24,7 @@ def plan_subquestions(topic: str, max_subquestions: int = 5) -> List[str]:
             pass
 
     return [
-        f"sWhat is the main goal of {topic}?",
+        f"What is the main goal of {topic}?",
         f"What are the important component of {topic}?",
         f"How is {topic} implemented locally?",
         f"What are the major constraints of {topic}?",

@@ -2,27 +2,35 @@ import re
 from pathlib import Path
 from typing import List
 
+def ensure_dir(path: Path) -> None:
+    path.mkdir(parents=True, exist_ok=True)
 
 def read_text_file(path: Path) -> str:
-    return path.read_text(encoding='utf-8', errors='ignore')
+    return path.read_text(encoding="utf-8", errors="ignore")
 
+def normalize_text(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+def tokenize(text: str) -> List[str]:
+    return re.findall(r"\b[a-zA-Z0-9]+\b", text.lower())
 
 def chunk_text(text: str, chunk_size: int = 700, overlap: int = 120) -> List[str]:
-    text = re.sub(r'\s+', ' ', text).strip()
+    text = text.strip()
     if not text:
         return []
-    chunks, i = [], 0
-    while i < len(text):
-        chunks.append(text[i:i + chunk_size])
-        i += max(1, chunk_size - overlap)
+
+    chunks = []
+    start = 0
+    step = max(1, chunk_size - overlap)
+
+    while start < len(text):
+        chunk = text[start:start + chunk_size]
+        chunks.append(chunk)
+        start += step
+
     return chunks
 
-
-def keyword_score(query: str, text: str) -> int:
-    q = [w.lower() for w in re.findall(r'[a-zA-Z0-9]+', query) if len(w) > 2]
-    t = text.lower()
-    return sum(t.count(w) for w in q)
-
-
-def ensure_dir(path: Path):
-    path.mkdir(parents=True, exist_ok=True)
+def keyword_score(query: str, chunk: str) -> int:
+    q_tokens = tokenize(query)
+    c_text = normalize_text(chunk)
+    return sum(1 for token in q_tokens if token in c_text)

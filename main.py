@@ -1,18 +1,13 @@
-import argparse  # For command-line argument parsing
-from agent import run_agent  # Import the main agent function
-
+import argparse
+from agent import run_agent
 
 def main():
-    # Create a CLI parser with a short description of the program
-    parser = argparse.ArgumentParser(description='Autonomous Local Research Agent')
-    # Accept a single positional argument for the research topic
-    parser.add_argument('topic', help='Research topic')
-    # Parse the provided command-line arguments
+    parser = argparse.ArgumentParser(description="Autonomous Local Research Agent")
+    parser.add_argument("topic", help="Research topic")
     args = parser.parse_args()
-    # Run the agent on the provided topic and print the final report
-    print(run_agent(args.topic))
 
+    report = run_agent(args.topic)
+    print(report)
 
-if __name__ == '__main__':
-    # Execute main() only when this file is run directly
+if __name__ == "__main__":
     main()

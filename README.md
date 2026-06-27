@@ -92,9 +92,12 @@ The default configuration expects the model name `llama3.2:1b` and an Ollama ser
 
 ```text
 Electro_Neurons_edgeminds2026internship/
+├── app.py
 ├── agent.py
 ├── config.py
 ├── main.py
+├── eval.py
+├── generate_evaluation_report.py
 ├── ollama_client.py
 ├── planner.py
 ├── reporter.py
@@ -102,12 +105,16 @@ Electro_Neurons_edgeminds2026internship/
 ├── retriever.py
 ├── synthesizer.py
 ├── utils.py
+├── evaluation_dataset.json
+├── templates/
+│   └── index.html
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── app.js
 ├── documents/
-│   ├── sample1.md
-│   └── sample2.txt
-├── output/
-│   └── .gitkeep
-└── README.md
+└── output/
 ```
 
 The program scans the `documents/` folder recursively and currently reads `.txt` and `.md` files only.

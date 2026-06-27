@@ -1,8 +1,68 @@
 [
   {
+    "topic": "which soil types support intensive agriculture",
+    "accuracy_score": 1.0,
+    "retrieval_score": 1.0,
+    "faithfulness_score": 0.6453488372093024
+  },
+  {
+    "topic": "which soil types support intensive agriculture",
+    "accuracy_score": 1.0,
+    "retrieval_score": 1.0,
+    "faithfulness_score": 0.42735042735042733
+  },
+  {
+    "topic": "how can farmers reduce crop loss during drought",
+    "accuracy_score": 1.0,
+    "retrieval_score": 1.0,
+    "faithfulness_score": 0.43468468468468463
+  },
+  {
+    "topic": "what factors influence agricultural productivity",
+    "accuracy_score": 0.75,
+    "retrieval_score": 0.6666666666666666,
+    "faithfulness_score": 0.44075144508670516
+  },
+  {
     "topic": "impact of climate change on crop yield in India",
     "accuracy_score": 1.0,
     "retrieval_score": 1.0,
-    "faithfulness_score": 0.46229632994338876
+    "faithfulness_score": 0.4008
+  },
+  {
+    "topic": "how does climate affect farm profitability",
+    "accuracy_score": 1.0,
+    "retrieval_score": 0.6666666666666666,
+    "faithfulness_score": 0.5633333333333334
+  },
+  {
+    "topic": "how do irrigation methods help during dry seasons",
+    "accuracy_score": 1.0,
+    "retrieval_score": 1.0,
+    "faithfulness_score": 0.4025316455696203
+  },
+  {
+    "topic": "how does soil moisture affect crop performance",
+    "accuracy_score": 0.75,
+    "retrieval_score": 1.0,
+    "faithfulness_score": 0.4471153846153846
+  },
+  {
+    "topic": "how do rising temperatures affect wheat production",
+    "accuracy_score": 1.0,
+    "retrieval_score": 1.0,
+    "faithfulness_score": 0.41794871794871796
+  },
+  {
+    "topic": "how do farm costs affect profitability",
+    "accuracy_score": 0.75,
+    "retrieval_score": 1.0,
+    "faithfulness_score": 0.4166666666666667
+  },
+  {
+    "topic": "how do farming adaptations improve resilience to climate change",
+    "accuracy_score": 1.0,
+    "retrieval_score": 1.0,
+    "faithfulness_score": 0.5258064516129032
   }
 ]

@@ -1,6 +1,7 @@
 import argparse
 from agent import run_agent
 
+
 def main():
     parser = argparse.ArgumentParser(
         description="Autonomous Local Research Agent"
@@ -14,7 +15,8 @@ def main():
 
     result = run_agent(args.topic)
 
-    print(result["report"])
+    print(result)
+
 
 if __name__ == "__main__":
     main()

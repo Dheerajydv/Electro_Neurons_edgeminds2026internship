@@ -1,17 +1,112 @@
-
- [
+[
+  {
+    "topic": "which soil types support intensive agriculture",
+    "expected_keywords": ["soil", "loamy", "clay", "sandy"],
+    "expected_sources": ["soil.md"],
+    "expected_answer_points": [
+      "loamy soil supports intensive agriculture",
+      "clay soils retain more water",
+      "sandy soils drain quickly and need more irrigation"
+    ]
+  },
+  {
+    "topic": "which soil types support intensive agriculture",
+    "expected_keywords": ["soil", "loamy", "clay", "sandy"],
+    "expected_sources": ["soil.md"],
+    "expected_answer_points": [
+      "loamy soil supports intensive agriculture",
+      "clay soils retain more water",
+      "sandy soils drain quickly and need more irrigation"
+    ]
+  },
+  {
+    "topic": "how can farmers reduce crop loss during drought",
+    "expected_keywords": ["drought", "adaptation", "water", "loss"],
+    "expected_sources": ["drought.md"],
+    "expected_answer_points": [
+      "water conservation helps",
+      "drought-resistant practices reduce loss",
+      "adaptation strategies improve resilience"
+    ]
+  },
+  {
+    "topic": "what factors influence agricultural productivity",
+    "expected_keywords": ["productivity", "rainfall", "irrigation", "fertilizer"],
+    "expected_sources": ["climate_change.md", "soil.md", "agricultural_profitability.md"],
+    "expected_answer_points": [
+      "rainfall variability affects productivity",
+      "irrigation improves stability",
+      "fertilizer and soil conditions influence output"
+    ]
+  },
   {
     "topic": "impact of climate change on crop yield in India",
-    "expected_keywords": [
-      "wheat",
-      "rice",
-      "drought",
-      "temperature",
-      "rainfall"
-    ],
-    "expected_sources": [
-      "sample1.md",
-      "sample2.txt"
+    "expected_keywords": ["climate", "crop", "yield", "rainfall"],
+    "expected_sources": ["sample1.md", "climate_change.md"],
+    "expected_answer_points": [
+      "climate change affects agriculture",
+      "rainfall variability impacts yield",
+      "higher temperature can reduce crop productivity"
+    ]
+  },
+  {
+    "topic": "how does climate affect farm profitability",
+    "expected_keywords": ["profitability", "yield", "cost", "irrigation"],
+    "expected_sources": ["agricultural_profitability.md", "climate_change.md", "drought.md"],
+    "expected_answer_points": [
+      "crop yield affects income",
+      "higher input costs reduce profit",
+      "irrigation and drought resilience help stabilize returns"
+    ]
+  },
+  {
+    "topic": "how do irrigation methods help during dry seasons",
+    "expected_keywords": ["irrigation", "water", "drought", "yield"],
+    "expected_sources": ["drought.md", "climate_change.md"],
+    "expected_answer_points": [
+      "irrigation reduces water stress",
+      "drip irrigation improves water use efficiency",
+      "better irrigation lowers yield loss"
+    ]
+  },
+  {
+    "topic": "how does soil moisture affect crop performance",
+    "expected_keywords": ["soil", "moisture", "crop", "retention"],
+    "expected_sources": ["soil.md", "drought.md"],
+    "expected_answer_points": [
+      "soil moisture supports crop growth",
+      "water retention differs by soil type",
+      "low moisture increases crop stress"
+    ]
+  },
+  {
+    "topic": "how do rising temperatures affect wheat production",
+    "expected_keywords": ["temperature", "wheat", "yield", "heat"],
+    "expected_sources": ["climate_change.md", "sample1.md"],
+    "expected_answer_points": [
+      "higher temperatures reduce wheat yield",
+      "heat stress affects flowering and grain filling",
+      "temperature rise lowers crop productivity"
+    ]
+  },
+  {
+    "topic": "how do farm costs affect profitability",
+    "expected_keywords": ["cost", "profitability", "fertilizer", "labor"],
+    "expected_sources": ["agricultural_profitability.md"],
+    "expected_answer_points": [
+      "input costs reduce profit",
+      "fertilizer and labor costs matter",
+      "higher expenses lower net return"
+    ]
+  },
+  {
+    "topic": "how do farming adaptations improve resilience to climate change",
+    "expected_keywords": ["adaptation", "resilience", "seeds", "irrigation"],
+    "expected_sources": ["sample1.md", "climate_change.md", "drought.md"],
+    "expected_answer_points": [
+      "drought-resistant seeds help",
+      "improved irrigation reduces risk",
+      "crop diversification improves resilience"
     ]
   }
 ]
